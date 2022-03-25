@@ -15,20 +15,8 @@ For any IKEA greenhouse cabinet enthusiasts, we know maintaining a healthy envir
 
 With a comprehensive web application built, using a Raspberry Pi integrated with a DHT22 sensor, users are now able to view the temperature and humidity inside their cabinet anywhere from the comfort of their home via computer or mobile phone.
 
-## Table of Contents
---------------------
-
-<!--ts-->
-
-* [Installation] (#installation)
-* [Dependencies] (#dependencies)
-* [Usage] (#usage)
-* [Architecture] (#architecture)
-
-<!--ts-->
-
+<a name="installation"></a>
 ## Installation
---------------
 ```
 $ git clone https://github.com/chrisdo023/My-IKEA-Greenhouse-Cabinet.git
 $ cd My-IKEA-Greenhouse-Cabinet
@@ -36,11 +24,9 @@ $ pip3 install -r requirements.txt
 ```
 
 ## Dependencies
-------------
 My-IKEA-Greenhouse Cabinet currently only supports Python 3.
 
 ## Usage
--------
 Start the Flask web server via
 ```
 $ python3 flask/__init__.py
@@ -51,4 +37,3 @@ By default it binds to all interfaces on port 5000 (so pointing your browser to 
 
 
 ## Architecture
----------------

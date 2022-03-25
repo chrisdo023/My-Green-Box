@@ -52,9 +52,9 @@ def post():
             con.close()
             con.close()
 
-            msg = " Temperature and humidity recorded! "
+            msg = "Temperature and humidity recorded"
         except:
-            msg = " Error in recording temperature and humidity :'( "
+            msg = "Could not record temperature and humidity"
         finally:
             return { "status": msg } 
 
@@ -76,7 +76,6 @@ def retrieve():
     if request.method == 'GET':
         try:
             con = sqlite3.connect('cabinet.db')
-            con.row_factory = sqlite3.Row
             cur = con.cursor()
 
             data = cur.execute("select * from cabinet").fetchall()[-1]
@@ -84,6 +83,8 @@ def retrieve():
             data = []
         finally:
             return { "data": data }
+    else:
+        print("error")
 
 if __name__ == "__main__":
     app.run(debug= True)
