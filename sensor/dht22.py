@@ -15,10 +15,15 @@ while True:
                 'CreatedAt': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
             response = requests.post('http://127.0.0.1:5000/post', data=data)
-            print(response)
-        except:
-            print("Failed to insert temperature and humidity")
-    else:
-        print("Failed to retrieve data from temperature and humidity sensor")
 
-    time.sleep(10)
+            log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - " + json.loads(response.text)["status"] +"\n"
+        except:
+            log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - Failed send temperature and humidity data" + "\n"
+        finally:
+            f = open("DHT22-Log.txt", "a")
+            f.write(log)
+            f.close()        
+    else:
+        f = open("DHT22-Log.txt", "a")
+        f.write("[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - Failed to retrieve data from temperature and humidity sensor")
+        f.close()

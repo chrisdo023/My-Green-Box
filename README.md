@@ -13,7 +13,7 @@
 
 For any IKEA greenhouse cabinet enthusiasts, we know maintaining a healthy environment for our plants is important.
 
-With a comprehensive web application built, using a Raspberry Pi and a DHT22 sensor, users are now able to view the temperature and humidity inside their cabinet anywhere from the comfort of their home via computer or mobile phone.
+With a comprehensive web application built, using a Raspberry Pi integrated with a DHT22 sensor, users are now able to view the temperature and humidity inside their cabinet anywhere from the comfort of their home via computer or mobile phone.
 
 ## Table of Contents
 --------------------
