@@ -71,11 +71,6 @@ def list():
 
         rows = cur.fetchall()
 
-        for row in rows:
-            print(row['id'])
-            print(row['temperature'])
-            print(row['humidity'])
-            print(row['created_at'])
         return render_template("list.html", rows=rows)
 
 @app.route('/retrieve', methods = ['GET'])
