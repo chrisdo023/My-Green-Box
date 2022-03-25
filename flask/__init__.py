@@ -1,6 +1,4 @@
-import datetime
 import sqlite3
-
 from flask import Flask, render_template, g, request
 
 app = Flask(__name__)
@@ -46,7 +44,7 @@ def post():
 
             temperature = request.form["Temperature"]
             humidity = request.form["Humidity"]
-            createdAt = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            createdAt = request.form["CreatedAt"]
 
             cur.execute("INSERT INTO cabinet (id, temperature, humidity, created_at) VALUES (?, ?, ?, ?)", (None, temperature, humidity, createdAt))
 
