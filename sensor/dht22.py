@@ -18,10 +18,11 @@ while True:
         log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - " + json.loads(response.text)["status"] +"\n"
     except:
         log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - Exception" + "\n"
+        time.sleep(3)
         continue
     finally:
         f = open("DHT22-Log.txt", "a")
         f.write(log)
         f.close() 
 
-    time.sleep(5)   
+    time.sleep(10)   
