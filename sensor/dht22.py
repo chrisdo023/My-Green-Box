@@ -1,29 +1,27 @@
-import Adafruit_DHT, requests, time, datetime
+import adafruit_dht, requests, time, datetime, json
 
-DHT_SENSOR = Adafruit_DHT.DHT22
-DHT_PIN = 4
+dht_device = adafruit_dht.DHT22(4)
 
 while True:
-    humidity, temperature = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
+    try:
+        temperature_c = dht_device.temperature
+        temperature_f = temperature_c * (9/5) + 32
+        humidity = dht_device.humidity
+        
+        data = {
+            'Temperature': "{0:0.1f}".format(temperature_f),
+            'Humidity': "{0:0.1f}".format(humidity),
+            'CreatedAt': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        }
 
-    if humidity is not None and temperature is not None:
-        print("Temp={0:0.1f}*C  Humidity={1:0.1f}%".format(temperature, humidity))
-        try:
-            data = {
-                'Temperature': int("{0:0.1f}".format(temperature)),
-                'Humidity': int("{0:0.1f}".format(humidity)),
-                'CreatedAt': datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            }
-            response = requests.post('http://127.0.0.1:5000/post', data=data)
-
-            log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - " + json.loads(response.text)["status"] +"\n"
-        except:
-            log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - Failed send temperature and humidity data" + "\n"
-        finally:
-            f = open("DHT22-Log.txt", "a")
-            f.write(log)
-            f.close()        
-    else:
+        response = requests.post('http://127.0.0.1:5000/post', data=data)
+        log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - " + json.loads(response.text)["status"] +"\n"
+    except:
+        log = "[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - Exception" + "\n"
+        continue
+    finally:
         f = open("DHT22-Log.txt", "a")
-        f.write("[" + datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S") + "] - Failed to retrieve data from temperature and humidity sensor")
-        f.close()
+        f.write(log)
+        f.close() 
+
+    time.sleep(5)   
