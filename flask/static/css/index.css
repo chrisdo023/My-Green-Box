@@ -1,6 +1,60 @@
-h1 {
-    border: 2px #eee solid;
-    color: brown;
-    text-align: center;
-    padding: 10px;
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html, body {
+    height: 100%;
+    background-color: #2C5F2D;
+    color: #F8F0E3;
+    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
+    border-color: #97BC62FF;
+}
+
+.item-a {
+    font-size: 6vw;
+    grid-area: reminder;
+}
+
+.item-b {
+    font-size: 6vw;
+    display: grid;
+    grid-area: temperature;
+    justify-content: center;
+    align-content: center;
+}
+
+.item-c {
+    font-size: 6vw;
+    display: grid;
+    grid-area: humidity;
+    justify-content: center;
+    align-content: center;
+}
+
+.item-d {
+    font-size: 6vw;
+    display: grid;
+    grid-area: calendar;
+    justify-content: center;
+    align-content: center
+}
+
+.pretty {
+    background-color: #97BC62FF;
+}
+
+.container {
+    height: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-areas:
+        "calendar temperature"
+        "reminder temperature"
+        "reminder humidity" 
+        "reminder humidity";
 }
