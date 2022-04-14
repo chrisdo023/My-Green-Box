@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
-    <title>FlaskBlog</title>
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
-   <h1>Welcome to FlaskBlog</h1>
+    <div class="container">
+        <div class="item-a pretty">
+            Reminder
+        </div>
+        <div class="item-b pretty ">
+            <div>
+                {{ temperature }}
+            </div>
+        </div>
+        <div class="item-c pretty">
+            <div>
+                {{ humidity }}
+            </div>
+        </div>
+        <div class="item-d pretty">
+            {{ date }}
+        </div>
+    </div>
 </body>
 </html>

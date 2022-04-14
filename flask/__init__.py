@@ -1,4 +1,4 @@
-import sqlite3
+import sqlite3, datetime, os.path
 from flask import Flask, render_template, g, request
 
 app = Flask(__name__)
@@ -6,12 +6,14 @@ app = Flask(__name__)
 # default cabinet.db
 DATABASE = 'cabinet.db'
 database = 'cabinet'
+MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec']
 
 def get_db():
     db = getattr(g, '_database', None)
     if db is None:
-        db = g._database = sqlite3.connect(DATABASE)
-        print("\n\nSuccessfully connected to SQLite\n\n")
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, DATABASE)
+        db = g._database = sqlite3.connect(db_path)
     else:
         print("Unsuccessfully connected to SQLite")
     return db
@@ -33,7 +35,16 @@ def create_app():
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    con = sqlite3.connect("cabinet.db")
+    cur = con.cursor()
+
+    data = cur.execute("SELECT * FROM cabinet").fetchall()[-1]
+    temperature = data[1] + u"\N{DEGREE SIGN}" + 'F'
+    humidity = str(data[2],"%")
+
+    date = str(datetime.date.today().day) + " " + str(MONTH[datetime.date.today().month - 1])
+    
+    return render_template('index.html', date=date, temperature=temperature, humidity=humidity)
 
 @app.route('/post', methods = ['POST', 'GET'])
 def post():
@@ -61,11 +72,13 @@ def post():
 @app.route('/list', methods = ['GET'])
 def list():
     if request.method == 'GET':
-        con = sqlite3.connect('cabinet.db')
+        BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+        db_path = os.path.join(BASE_DIR, "cabinet.db")
+        con = sqlite3.connect("cabinet.db")
         con.row_factory = sqlite3.Row
 
         cur = con.cursor()
-        cur.execute("select * from cabinet")
+        cur.execute("SELECT * FROM cabinet")
 
         rows = cur.fetchall()
 
@@ -75,10 +88,10 @@ def list():
 def retrieve():
     if request.method == 'GET':
         try:
-            con = sqlite3.connect('cabinet.db')
+            con = sqlite3.connect("cabinet.db")
             cur = con.cursor()
 
-            data = cur.execute("select * from cabinet").fetchall()[-1]
+            data = cur.execute("SELECT * FROM cabinet").fetchall()[-1]
         except:
             data = []
         finally:
