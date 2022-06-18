@@ -1,14 +1,15 @@
-<h1 align="center">My-IKEA-Greenhouse-Cabinet</h1>
+<h1 align="center">My-Green-Box</h1>
 
 <p align="center">
-    <img src="https://img.shields.io/github/v/release/chrisdo023/My-IKEA-Greenhouse-Cabinet?include_prereleases&logo=github">
-    <img src="https://img.shields.io/gitlab/coverage/chrisdo023/My-IKEA-Greenhouse-Cabinet/main">
-    <img src="https://img.shields.io/github/repo-size/chrisdo023/My-IKEA-Greenhouse-Cabinet">
-    <img src="https://img.shields.io/github/downloads/chrisdo023/My-IKEA-Greenhouse-Cabinet/total">
-    <img src="https://img.shields.io/github/license/chrisdo023/My-IKEA-Greenhouse-Cabinet">
+    <img src="https://img.shields.io/github/v/release/chrisdo023/My-Green-Box?include_prereleases&logo=github">
+    <img src="https://img.shields.io/gitlab/coverage/chrisdo023/My-Green-Box/main">
+    <img src="https://img.shields.io/github/repo-size/chrisdo023/My-Green-Box">
+    <img src="https://img.shields.io/github/downloads/chrisdo023/My-Green-Box/total">
+    <img src="https://img.shields.io/github/license/chrisdo023/My-Green-Box">
     <img src="https://img.shields.io/github/followers/chrisdo023?style=social">
     <img src="https://img.shields.io/pypi/pyversions/4?logo=Python&logoColor=white">
-    <img src="https://img.shields.io/github/commit-activity/m/chrisdo023/My-IKEA-Greenhouse-Cabinet">
+    <img src="https://img.shields.io/github/commit-activity/m/chrisdo023/My-Green-Box">
+    <img src="https://img.shields.io/github/license/chrisdo023/My-Green-Box">
 </p>
 
 For any IKEA greenhouse cabinet enthusiasts, we know maintaining a healthy environment for our plants is important.
@@ -18,13 +19,13 @@ With a comprehensive web application built, using a Raspberry Pi integrated with
 <a name="installation"></a>
 ## Installation
 ```
-$ git clone https://github.com/chrisdo023/My-IKEA-Greenhouse-Cabinet.git
-$ cd My-IKEA-Greenhouse-Cabinet
+$ git clone https://github.com/chrisdo023/My-Green-Box.git
+$ cd My-Green-Box
 $ pip3 install -r requirements.txt
 ```
 
 ## Dependencies
-My-IKEA-Greenhouse Cabinet currently only supports Python 3.
+My-Green-Box currently only supports Python 3.
 
 ## Usage
 Start the Flask web server via
@@ -35,5 +36,32 @@ will allow you to view the temperature and humidity inside of your cabinet throu
 
 By default it binds to all interfaces on port 5000 (so pointing your browser to `http://127.0.0.1:5000` will do the trick).
 
+## Roadmap
+
+- [x] Create RESTful Web APIs
+- [x] Add Index Templates
+    - [x] Establish Header with "Add Me" and "Notification" features
+    - [ ] Display created Cabinet
+    - [ ] Display captured temperature and humidity data from Cabinet
+    - [ ] Add temperature and humidity graph
+- [x] Interface DHT22 sensor w/ Raspberry Pi (RPi)
+- [x] Capture temperature and humidity data w/ DHT22 sensor
+- [x] Setup My Structured Query Language Database (MySQL DB) on RPi
+the readme
+
+## Contributing
+
+Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the Branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Architecture
