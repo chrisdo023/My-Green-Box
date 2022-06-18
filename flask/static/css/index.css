@@ -1,60 +1,281 @@
-* {
+a{
+    text-decoration: none;
+    color: black;
+}
+  
+a:visited{
+    color: black;
+}
+
+.notifbox::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 5px
+}
+
+.notifbox::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+    border-radius: 5px
+}
+
+.notifbox::-webkit-scrollbar-thumb
+{
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 5px
+}
+
+header{
+    -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.1);
+    height: 110px;
+    vertical-align: middle;
+}
+
+h1{
+    float: left;
+    padding: 10px 30px
+}
+
+body{
     margin: 0;
     padding: 0;
-    border: 0;
+    font-family: 'Raleway', sans-serif;
 }
 
-html, body {
+.icons{
+    display: inline;
+    float: right
+}
+
+.notification{
+    padding-top: 30px;
+    position: relative;
+    display: inline-block;
+}
+
+.createnew{
+    padding-top: 30px;
+    position: relative;
+    display: inline-block;    
+}
+
+.number{
+    height: 22px;
+    width:  22px;
+    background-color: #d63031;
+    border-radius: 20px;
+    color: white;
+    text-align: center;
+    position: absolute;
+    top: 23px;
+    left: 60px;
+    padding: 3px;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.number:empty {
+    display: none;
+}
+
+.notBtn{
+    transition: 0.5s;
+    cursor: pointer
+}
+
+.fas{
+    font-size: 25pt;
+    padding-bottom: 10px;
+    color: black;
+    margin-right: 40px;
+    margin-left: 40px;
+}
+
+.notifbox{
+    width: 400px;
+    height: 0px;
+    border-radius: 10px;
+    transition: 0.5s;
+    position: absolute;
+    overflow-y: scroll;
+    padding: 0px;
+    left: -300px;
+    margin-top: 5px;
+    background-color: #F4F4F4;
+    -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.1);
+}
+
+.addbox{
+    width: 400px;
+    height: 0px;
+    border-radius: 10px;
+    transition: 0.5s;
+    position: absolute;
+    overflow-y: scroll;
+    padding: 0px;
+    left: -230px;
+    margin-top: 5px;
+    background-color: #F4F4F4;
+    -webkit-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.2);
+    -moz-box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.1);
+    box-shadow: 10px 10px 23px 0px rgba(0,0,0,0.1);
+}
+
+.fas:hover {
+    color: #d63031;
+}
+
+/* .notBtn:hover > .box{
+    height: 60vh
+} */
+
+.content{
+    padding: 20px;
+    color: black;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.gry{
+    background-color: #F4F4F4;
+}
+
+.top{
+    color: black;
+    padding: 10px
+}
+
+.display{
+    position: relative;
+}
+
+.cont{
+    position: absolute;
+    top: 0;
+    width: 100%;
     height: 100%;
-    background-color: #2C5F2D;
-    color: #F8F0E3;
-    font-family: "Century Gothic", CenturyGothic, Geneva, AppleGothic, sans-serif;
-    border-color: #97BC62FF;
+    background-color: #F4F4F4;
 }
 
-.item-a {
-    font-size: 6vw;
-    grid-area: reminder;
+.cont:empty{
+    display: none;
 }
 
-.item-b {
-    font-size: 6vw;
-    display: grid;
-    grid-area: temperature;
-    justify-content: center;
-    align-content: center;
+.cent{
+    text-align: center;
+    display: block;
 }
 
-.item-c {
-    font-size: 6vw;
-    display: grid;
-    grid-area: humidity;
-    justify-content: center;
-    align-content: center;
+.sec{
+    padding: 25px 10px;
+    background-color: #F4F4F4;
+    transition: 0.5s;
 }
 
-.item-d {
-    font-size: 6vw;
-    display: grid;
-    grid-area: calendar;
-    justify-content: center;
-    align-content: center
+.profCont{
+    padding-left: 15px;
 }
 
-.pretty {
-    background-color: #97BC62FF;
+.profile{
+    -webkit-clip-path: circle(50% at 50% 50%);
+    clip-path: circle(50% at 50% 50%);
+    width: 75px;
+    float: left;
 }
 
+.txt{
+    vertical-align: top;
+    font-size: 1.25rem;
+    padding: 5px 10px 0px 115px;
+}
+
+.sub{
+    font-size: 1rem;
+    color: grey;
+}
+
+.new{
+    border-style: none none solid none;
+    border-color: red;
+}
+
+.sec:hover{
+    background-color: #BFBFBF;
+}
+
+/* Add styles to the form container */
+.form-container {
+    background-color: #F4F4F4;
+    position: relative;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    width: 75%;
+    padding: 15px 20px;
+    margin: 5px 0 22px 0;
+    margin-top: 75px;
+    border: none;
+    background: #DDD;
+    font-size: 20px;
+    border-radius: 25px;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #FFFFFF;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 40%;
+    opacity: 0.8; 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 135px;
+    border-radius: 25px;
+}
+  
+.dot {
+    height: 125px;
+    width: 125px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  
 .container {
-    height: 100%;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: auto;
-    column-gap: 10px;
-    row-gap: 10px;
-    grid-template-areas:
-        "calendar temperature"
-        "reminder temperature"
-        "reminder humidity" 
-        "reminder humidity";
+    display: block; 
+    font-size: 2em; 
+    margin-top: 0.67em; 
+    margin-bottom: 0.67em; 
+    margin-left: 1em; 
+    margin-right: 1em; 
+    font-weight: bold;
 }

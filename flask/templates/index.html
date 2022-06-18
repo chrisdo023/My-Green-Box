@@ -1,28 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
-    <link rel="stylesheet" href="../static/css/index.css">
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename= 'css/index.css') }}">
+  <link rel="stylesheet" href="../static/css/index.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-    <div class="container">
-        <div class="item-a pretty">
-            Reminder
-        </div>
-        <div class="item-b pretty ">
-            <div>
-                {{ temperature }}
+<header>
+  <h1>My Green Box</h1>
+  <div class = "icons">
+    <div class = "createnew" style = "position: relative">
+      <a href = "#">
+      <div class = "notBtn" href = "#">
+        <i class="fas fa-plus" style = "margin-right: 0px;" id = "plus" onclick="displayadd()"></i>
+          <div class = "addbox" id = "addbox">
+            <div class = "display">
+              <div class = "cont"><!-- Fold this div and try deleting evrything inbetween -->
+                <div class="dot" style = "margin-top: 100px;"></div>
+                <form class = "form-container" id="cabinetForm">
+                  <div class = "" style = "margin-top: 150px;">
+                    <input type = "text" placeholder = "Cabinet Name" name = "cabinet" id = "cabinet" style = "text-align: center;" spellcheck = "false" required>
+                  </div>
+                  <button type = "submit" class = "btn" style = "text-align: center; margin-top: 140px;" onclick="addCabinet()" id = "addme">Add Me!</button>
+                </form>
+              </div>
             </div>
-        </div>
-        <div class="item-c pretty">
-            <div>
-                {{ humidity }}
-            </div>
-        </div>
-        <div class="item-d pretty">
-            {{ date }}
-        </div>
+          </div>
+      </div>
+        </a>
     </div>
+    <div class = "notification">
+      <a href = "#">
+      <div class = "notBtn" href = "#">
+        <!--Number supports double digets and automaticly hides itself when there is nothing between divs -->
+        <div class = "number">2</div>
+        <i class="fas fa-bell" onclick = "displaynotif()"></i>
+          <div class = "notifbox" id = "notifbox">
+            <div class = "display">
+              <div class = "cont"><!-- Fold this div and try deleting evrything inbetween -->
+                <div class = "sec new">
+                  <a href = "https://codepen.io/Golez/">
+                  <div class = "profCont">
+                    <img class = "profile" src = "https://c1.staticflickr.com/5/4007/4626436851_5629a97f30_b.jpg">
+                  </div>
+                  <div class = "txt">James liked your post: "Pure css notification box"</div>
+                  <div class = "txt sub">11/7 - 2:30 pm</div>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+        </a>
+    </div>
+  </div>
+</header>
+<script src="{{url_for('static', filename='js/index.js')}}"></script>     
 </body>
 </html>

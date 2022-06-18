@@ -35,12 +35,14 @@ def create_app():
 
 @app.route('/')
 def index():
-    con = sqlite3.connect("cabinet.db")
+    BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+    db_path = os.path.join(BASE_DIR, "cabinet.db")
+    con = sqlite3.connect(db_path)
     cur = con.cursor()
 
     data = cur.execute("SELECT * FROM cabinet").fetchall()[-1]
-    temperature = data[1] + u"\N{DEGREE SIGN}" + 'F'
-    humidity = str(data[2],"%")
+    temperature = data[1]
+    humidity = data[2]
 
     date = str(datetime.date.today().day) + " " + str(MONTH[datetime.date.today().month - 1])
     
