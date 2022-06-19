@@ -1,3 +1,48 @@
+/* Grid container setup */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*::after {
+    box-sizing: inherit;
+}
+
+.l-wrap {
+    max-width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.grid-item {
+    text-align: center;
+    width: 33.3333%;
+    padding-right: 10px;
+    padding-left: 10px;
+    float: left;
+}
+
+.grid-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    text-align: center;
+    background: rgba(red, 0.25);
+}
+
+.three-col-grid .grid-item {
+    width: 33.33333%;
+    float: left;
+}
+
+.three-col-grid:after {
+    display: table;
+    clear: both;
+    content: '';
+}
+
 a{
     text-decoration: none;
     color: black;
@@ -22,6 +67,27 @@ a:visited{
 }
 
 .notifbox::-webkit-scrollbar-thumb
+{
+    background-color: black;
+    border: 2px solid black;
+    border-radius: 5px
+}
+
+.addbox::-webkit-scrollbar-track
+{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+    border-radius: 5px
+}
+
+.addbox::-webkit-scrollbar
+{
+    width: 10px;
+    background-color: #F5F5F5;
+    border-radius: 5px
+}
+
+.addbox::-webkit-scrollbar-thumb
 {
     background-color: black;
     border: 2px solid black;
@@ -117,7 +183,7 @@ body{
     border-radius: 10px;
     transition: 0.5s;
     position: absolute;
-    overflow-y: scroll;
+    overflow: hidden;
     padding: 0px;
     left: -230px;
     margin-top: 5px;
@@ -244,7 +310,7 @@ body{
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-    background-color: #04AA6D;
+    background-color: #2E8B57;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -273,9 +339,6 @@ body{
 .container {
     display: block; 
     font-size: 2em; 
-    margin-top: 0.67em; 
-    margin-bottom: 0.67em; 
-    margin-left: 1em; 
-    margin-right: 1em; 
+    margin: .67em;
     font-weight: bold;
 }

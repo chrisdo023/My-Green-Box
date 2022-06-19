@@ -7,7 +7,7 @@ function add(){
 
 function displayadd() {
   if(addFlag == false){
-    document.getElementById("addbox").style.height = "30vh";
+    document.getElementById("addbox").style.height = "350px";
     addFlag = true;
   } else {
     document.getElementById("addbox").style.height = "";
@@ -17,7 +17,7 @@ function displayadd() {
 
 function displaynotif() {
   if(notifFlag == false){
-    document.getElementById("notifbox").style.height = "60vh";
+    document.getElementById("notifbox").style.height = "600px";
     notifFlag = true;
   } else {
     document.getElementById("notifbox").style.height = "";
