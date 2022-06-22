@@ -11,7 +11,7 @@
 <body>
 <header>
   <h1 style = "padding-right: 10px;">My Green</h1>
-  <h1 style = "background-color: #2E8B57; color: #FFFFFF; padding: 10px; font-weight: bold;"> Box</h1>
+  <h1 style = "background-color: #2E8B57; color: #FFFFFF; padding: 10px; font-weight: bold; border-radius: 5px;"> Box</h1>
   <div class = "icons">
     <div class = "createnew" style = "position: relative">
       <a href = "#">
@@ -21,11 +21,11 @@
             <div class = "display">
               <div class = "cont"><!-- Fold this div and try deleting evrything inbetween -->
                 <div class="dot" style = "margin-top: 100px;"></div>
-                <form class = "form-container" id="cabinetForm">
+                <form class = "form-container" id ="cabinetForm" action = "/post" method = "POST">
                   <div class = "" style = "margin-top: 150px;">
-                    <input type = "text" placeholder = "Cabinet Name" name = "cabinet" id = "cabinet" style = "text-align: center;" spellcheck = "false" required>
+                    <input type = "text" placeholder = "Cabinet Name" name = "Cabinet" id = "cabinet" style = "text-align: center;" spellcheck = "false" required>
                   </div>
-                  <button type = "submit" class = "btn" style = "text-align: center; margin-top: 140px;" onclick="addCabinet()" id = "addme">Add Me!</button>
+                  <button type = "submit" class = "btn" style = "text-align: center; margin-top: 140px;" id = "addme">Add Me!</button>
                 </form>
               </div>
             </div>
@@ -60,17 +60,47 @@
   </div>
 </header>
 <div class = "container l-wrap" id = "container">
-  <div class="three-col-grid">
-    <div class = "grid-item">
-      <div class="grid-inner" style = "background-color: salmon;">Grid item</div>
-    </div>
-    <div class = "grid-item">
-      <div class="grid-inner" style = "background-color: lavender;">Grid item</div>
-    </div>
-    <div class = "grid-item">
-      <div class="grid-inner" style = "background-color: lightgreen;">Grid item</div>
-    </div>
+  <div class="three-col-grid-container" id = "grid">
+    {% if items|length > 0 %}
+      {% for item in items %}
+        <div class = "grid-item fade-in-image card-container">
+          <div class="grid-inner card" style = "background-color: #2E8B57;">
+            <div class = "front">{{ item[0] }}</div>
+            <div class = "back">back</div>
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
   </div>
+  <!-- <div class = "three-col-grid-container">
+    <div class="card-container three-col-grid">
+        <div class="card">
+            <div class="front">
+              <span>Rudsta</span>
+            </div>
+            <div class="back">User</div>
+        </div>
+    </div>
+    <div class="card-container three-col-grid">
+      <div class="card">
+          <div class="front">
+            <span>Rudsta</span>
+          </div>
+          <div class="back">User</div>
+      </div>
+  </div>
+  <div class="card-container three-col-grid">
+    <div class="card">
+        <div class="front">
+          <span>Rudsta</span>
+        </div>
+        <div class="back">User</div>
+    </div>
+</div> -->
+  </div>
+  
+
+</div>
 </div>
 <script src="{{url_for('static', filename='js/index.js')}}"></script>     
 </body>

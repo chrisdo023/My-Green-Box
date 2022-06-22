@@ -39,3 +39,9 @@ function addCabinet() {
     document.getElementById("cabinet").value = "";
   }, 500);
 }
+
+let gridItems = document.getElementById('grid');
+
+for(let i = 1; i < gridItems.childNodes.length; i+=2){
+  console.log(gridItems.childNodes[i]);
+}
