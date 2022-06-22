@@ -30,7 +30,7 @@ My-Green-Box currently only supports Python 3.
 ## Usage
 Start the Flask web server via
 ```
-$ python3 flask/__init__.py
+$ python3 flask/app.py
 ```
 will allow you to view the temperature and humidity inside of your cabinet through your browser.
 
@@ -41,9 +41,10 @@ By default it binds to all interfaces on port 5000 (so pointing your browser to 
 - [x] Create RESTful Web APIs
 - [x] Add Index Templates
     - [x] Establish Header with "Add Me" and "Notification" features
-    - [ ] Display created Cabinet
+    - [x] Display created Cabinet
     - [ ] Display captured temperature and humidity data from Cabinet
     - [ ] Add temperature and humidity graph
+- [] Add Ajax (Asynchronous JavaScript and XML) to Pass Information between Client-Server
 - [x] Interface DHT22 sensor w/ Raspberry Pi (RPi)
 - [x] Capture temperature and humidity data w/ DHT22 sensor
 - [x] Setup My Structured Query Language Database (MySQL DB) on RPi
