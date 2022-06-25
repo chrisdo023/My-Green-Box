@@ -44,7 +44,7 @@ By default it binds to all interfaces on port 5000 (so pointing your browser to 
     - [x] Display created Cabinet
     - [ ] Display captured temperature and humidity data from Cabinet
     - [ ] Add temperature and humidity graph
-- [] Add Ajax (Asynchronous JavaScript and XML) to Pass Information between Client-Server
+- [ ] Add Ajax (Asynchronous JavaScript and XML) to Pass Information between Client-Server
 - [x] Interface DHT22 sensor w/ Raspberry Pi (RPi)
 - [x] Capture temperature and humidity data w/ DHT22 sensor
 - [x] Setup My Structured Query Language Database (MySQL DB) on RPi
