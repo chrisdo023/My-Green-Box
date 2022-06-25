@@ -42,13 +42,19 @@ By default it binds to all interfaces on port 5000 (so pointing your browser to 
 - [x] Add Index Templates
     - [x] Establish Header with "Add Me" and "Notification" features
     - [x] Display created Cabinet
-    - [ ] Display captured temperature and humidity data from Cabinet
+    - [x] Display captured temperature and humidity data from Cabinet
+        - [ ] Structure temperature and humidity data in aesthetic format
     - [ ] Add temperature and humidity graph
-- [ ] Add Ajax (Asynchronous JavaScript and XML) to Pass Information between Client-Server
+    - [ ] Display number of plants inside of Cabinet
+- [ ] Add "Update" mechanism for Notification bell (Creation/Deletion of Cabinet, All Time High Temperature for Cabinet, Watering Plants)
+- [x] Add Ajax (Asynchronous JavaScript and XML) to Pass Information between Client-Server
 - [x] Interface DHT22 sensor w/ Raspberry Pi (RPi)
 - [x] Capture temperature and humidity data w/ DHT22 sensor
 - [x] Setup My Structured Query Language Database (MySQL DB) on RPi
 the readme
+- [ ] Optimize Flask Server or other mechanisms
+- [ ] Create test bed for application
+- [ ] Version 1 Roadmap is completed when above tasks are completed
 
 ## Contributing
 
