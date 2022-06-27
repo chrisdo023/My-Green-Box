@@ -34,7 +34,7 @@ $ python3 flask/app.py
 ```
 will allow you to view the temperature and humidity inside of your cabinet through your browser.
 
-By default it binds to all interfaces on port 5000 (so pointing your browser to `http://127.0.0.1:5000` will do the trick).
+By default it binds to all interfaces on port 5000 (so pointing your browser to `http://127.0.0.1:5000` or `http://<Flask Server IP Address>:5000` will do the trick).
 
 ## Roadmap
 
@@ -50,7 +50,11 @@ By default it binds to all interfaces on port 5000 (so pointing your browser to 
 - [x] Add Ajax (Asynchronous JavaScript and XML) to Pass Information between Client-Server
 - [x] Interface DHT22 sensor w/ Raspberry Pi (RPi)
 - [x] Capture temperature and humidity data w/ DHT22 sensor
-- [x] Setup My Structured Query Language Database (MySQL DB) on RPi
+- [] SQLite3
+    - [x] Setup Structured Query Lite (SQLite3) on RPi
+    - [ ] Create 3 different tables (Cabinets, DHT22, Plants)
+    - [ ] Establish Primary Key and Foreign Key for Tables
+    - [ ] Successfully access all data from Tables
 the readme
 - [ ] Optimize Flask Server or other mechanisms
 - [ ] Create test bed for application
