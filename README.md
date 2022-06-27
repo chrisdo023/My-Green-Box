@@ -52,7 +52,7 @@ By default it binds to all interfaces on port 5000 (so pointing your browser to 
 - [x] Capture temperature and humidity data w/ DHT22 sensor
 - [] SQLite3
     - [x] Setup Structured Query Lite (SQLite3) on RPi
-    - [ ] Create 3 different tables (Cabinets, DHT22, Plants)
+    - [ ] Create 4 different tables (Cabinets, DHT22, Plants, Notifications)
     - [ ] Establish Primary Key and Foreign Key for Tables
     - [ ] Successfully access all data from Tables
 the readme
